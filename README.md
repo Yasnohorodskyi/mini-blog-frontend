@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# Mini-Blog Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the frontend of the Mini-Blog web application. This frontend is built using React, TypeScript, Vite, and SCSS. It retrieves data from both a Node.js server and Contentful CMS and features adaptive layouts for the main page and individual posts.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To set up and run the frontend:
 
-## Expanding the ESLint configuration
+1. Install dependencies:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   npm install
 
-- Configure the top-level `parserOptions` property like this:
+2. Start the development server:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+   ```bash
+   npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The development server will start, and you can access the application at http://localhost:5173.
+
+## Features
+**Adaptive Layout**: The frontend is designed to adapt to various screen sizes, providing an optimal user experience on different devices.
+
+**Integration with Node.js Server**: The frontend fetches data from a Node.js server to display posts and pages.
+
+**Contentful CMS Integration**: Content is retrieved from the Contentful CMS, allowing for dynamic content updates.
+
+**Routing**: The application uses routing to navigate between the main page and individual posts.
+
+**Styling with SCSS**: SCSS is used for styling, providing flexibility and maintainability.
