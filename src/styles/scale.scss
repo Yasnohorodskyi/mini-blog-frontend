@@ -1,0 +1,53 @@
+@use 'sass:math';
+
+@import "media";
+
+html {
+  // --= CONFIG =--
+  // Normal parameters by design
+  $initialFontSize: 16px;
+  $initialMinimalWidth: 1508px;
+
+  // Scaled site parameters destinations values
+  $scaledFontSize: 8px;
+  $scaledScreenWidth: $mobile-max-width + 1px;
+
+  // --= END CONFIG =--
+
+  // --= CALCULATIONS =--
+  $deltaFontSizePerOnePx: math.div($initialFontSize - $scaledFontSize, 1600px - ($mobile-max-width + 1px));
+  $fontPrecision: math.div(1, 10);
+  $prevFontSizePx: false; // Define initial value, no matter what
+  $prevUsedWidthPx: $initialMinimalWidth; // Define initial value
+  $lastMediaSetted: false;
+
+  @for $currWidthPx from $initialMinimalWidth to 1px {
+    $currFontSizePx: $initialFontSize - math.round(math.div(($initialMinimalWidth - $currWidthPx) * $deltaFontSizePerOnePx, $fontPrecision)) * $fontPrecision;
+
+    // Bypass first iterate to obtain minWidth and maxWidth value
+    // Bypass iterations when fontSize is same as in previous iteration
+    // Bypass iterations when last media setted which is smaller then phone media
+    // !!! We use overlapped ranges in media (1px) because chrome got bugs on edges of range changes
+    @if $currWidthPx >= $scaledScreenWidth {
+      @if  $currFontSizePx != $prevFontSizePx and $prevFontSizePx {
+        @media (min-width: #{$currWidthPx}) and (max-width: #{$prevUsedWidthPx}) {
+          font-size: $currFontSizePx;
+        }
+        // stylelint-disable-next-line order/order
+        $prevUsedWidthPx: $currWidthPx;
+      }
+    }
+
+ @else if $currWidthPx < $scaledScreenWidth and not $lastMediaSetted {
+      @media (min-width: #{$scaledScreenWidth}) and (max-width: #{$prevUsedWidthPx}) {
+        font-size: $currFontSizePx;
+      }
+      // stylelint-disable-next-line order/order
+      $lastMediaSetted: true;
+    }
+
+    $prevFontSizePx: $currFontSizePx;
+  }
+
+  // --= END CALCULATIONS =--
+}

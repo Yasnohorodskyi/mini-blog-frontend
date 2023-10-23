@@ -1,0 +1,25 @@
+@import "include";
+
+html {
+  scrollbar-color: $colorAccent #f1eeee;
+  scrollbar-width: thin;
+}
+
+body {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: $colorGreyLight;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    margin: -5px 0;
+    background-color: $colorAccent;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgb(0 0 0 / 30%);
+  }
+}

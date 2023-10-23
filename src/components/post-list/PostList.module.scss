@@ -1,0 +1,29 @@
+@import '../../styles/include.scss';
+
+.container {
+  @extend %content-container;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  color: $colorAccent;
+  text-align: center;
+  margin-bottom: 40px;
+  @media #{$phone} {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+.postsListContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  @media #{$phone} {
+    grid-template-columns: 1fr;
+  }
+}

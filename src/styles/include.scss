@@ -1,0 +1,33 @@
+@import 'media';
+
+$colorAccent: #F6A429;
+$colorBackground: #F4F4F4;
+$colorGrey: #4D4D4D;
+$colorGreyLight: #BFBFBF;
+$colorDark: #161616;
+$colorWhite: #FFFFFF;
+
+
+%content-container {
+  $width: 1320px;
+  $paddingHorizontal: 60px;
+
+  box-sizing: border-box;
+  max-width: $width + ($paddingHorizontal * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 $paddingHorizontal;
+
+  @media #{$phone} {
+    $width: 100%;
+    $paddingHorizontal: 60px;
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 0 $paddingHorizontal;
+  }
+
+  @media #{$mobile-phone} {
+    $paddingHorizontal: 20px;
+    padding: 0 $paddingHorizontal;
+  }
+}

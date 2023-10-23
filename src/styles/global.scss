@@ -1,0 +1,39 @@
+@import 'fonts';
+@import 'include';
+@import 'scroll-bar-styling';
+@import 'scale';
+@import "the-new-css-reset/css/reset.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  font-feature-settings: 'lnum';
+  color: $colorDark;
+
+  background-color: $colorWhite;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  ::-moz-focus-inner {
+    border: 0;
+  }
+}

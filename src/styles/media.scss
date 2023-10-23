@@ -1,0 +1,65 @@
+// mobile
+$mobile-max-width: 767px;
+
+// large desktop
+
+$large-desktop: 1920px !default;
+$large-desktop-min: $large-desktop !default;
+$large-desktop-max: ($large-desktop-min - 1) !default;
+
+// scalling desktop size
+
+$scalling-desktop: 1510px !default;
+$scalling-desktop-min: $large-desktop !default;
+$scalling-desktop-max: ($large-desktop-min - 1) !default;
+
+// PC
+$desktop: 992px !default;
+$desktop-min: $desktop !default;
+$desktop-max: ($desktop-min - 1) !default;
+
+
+
+// tablet
+$tablet: 768px !default;
+$tablet-min: $tablet !default;
+$tablet-max: ($tablet-min - 1) !default;
+
+// mobile phone
+$mobile-phone: 576px !default;
+$mobile-phone-min: $mobile-phone !default;
+$mobile-phone-max: ($mobile-phone-min - 1) !default;
+
+// for PC 1920 - and Tablet (actual dimensions for drawing 768-1920)
+$tablet-and-large-desktop: #{'(min-width:'$tablet-min') and (max-width:'$large-desktop-max')'};
+
+// for PC 992 - 1510 (real dimensions for drawing 940+)
+$scalling-desktop: #{'(min-width:'$tablet-min') and (max-width:'$scalling-desktop-max')'};
+
+// for PC 992 - and above (real dimensions for drawing 940+)
+$desktop: #{'(min-width:'$desktop-min')'};
+
+// for tablets 768 - (992-1) (actual dimensions for drawing 753-910)
+$tablet: #{'(min-width:'$tablet-min') and (max-width:'$desktop-max')'};
+
+// for tablets 768 - and above (real dimensions for drawing 940+)
+$tablet-and-desktop: #{'(min-width:'$tablet-min')'};
+
+// for mobile + tablets 0 - (992-1)
+$phone-and-tablet: #{'screen and (max-width:'$desktop-max')'};
+
+//TODO: rename wariables  $phone -> $mobile or smth like that
+// for mobile 0 - (768-1) (actual drawing dimensions 320-752)
+$phone: #{'only screen and (max-width:'$tablet-max')'};
+
+// for mobile-tablets 577 - (768-1) (actual drawing dimensions 576-752)
+$tablet-mobile-phone: #{'(min-width:'$mobile-phone-min') and (max-width:'$tablet-max')'};
+
+// for mobile 0 - (414) (actual drawing dimensions 320-576)
+$mobile-phone: #{'only screen and (max-width:'$mobile-phone-min')'};
+
+// for mobile phones 576 - and above (real dimensions for drawing 940+)
+$mobile-phone-and-desktop: #{'(min-width:'$mobile-phone-min')'};
+
+
+

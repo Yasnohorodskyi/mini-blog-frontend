@@ -1,0 +1,60 @@
+@import '../../styles/include.scss';
+
+.banner {
+  padding: 130px 0 60px;
+  background: $colorBackground;
+  width: 100%;
+}
+
+.container {
+  @extend %content-container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  @media #{$phone} {
+    grid-template-columns: 1fr;
+    grid-row-gap: 40px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  @media #{$phone} {
+    align-items: center;
+  }
+}
+
+.title {
+  font-size: 80px;
+  font-weight: 700;
+  color: $colorAccent;
+  @media #{$phone} {
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+.description p {
+  font-size: 24px;
+  @media #{$phone} {
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.imageContainer {
+  display: grid;
+  place-items: center;
+  @media #{$phone} {
+    grid-row: 1 / 2;
+  }
+}

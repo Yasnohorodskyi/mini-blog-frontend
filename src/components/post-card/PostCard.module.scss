@@ -1,0 +1,68 @@
+@import '../../styles/include.scss';
+
+.card {
+  background: $colorBackground;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.28);
+  }
+}
+
+.image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: $colorAccent;
+  text-align: center;
+  margin-bottom: 30px;
+  @media #{$phone} {
+    font-size: 24px;
+  }
+}
+
+.linkWrap {
+  display: grid;
+  place-items: center;
+  padding-bottom: 30px;
+}
+
+.link {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 165px;
+  height: 40px;
+  padding: 10px 20px;
+  color: $colorDark;
+  text-decoration: none;
+  background: $colorAccent;
+  border-radius: 3px;
+  box-shadow: 0 0 5px -2px transparent;
+  transition: 125ms linear box-shadow;
+
+  &:hover {
+    box-shadow: 0 0 8px rgb(250 119 4 / 97%);
+  }
+
+  &:active {
+    box-shadow: 0 0 8px rgb(250 119 4 / 97%);
+  }
+
+  span {
+    font-size: 14px;
+    text-align: center;
+  }
+}
